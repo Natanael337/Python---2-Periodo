@@ -22,7 +22,7 @@ else:
     print('O Maior Número entre os Digitados é {}'.format(numero1))
 
 salario = float(input('Informe o Seu Salário: '))
-if salario < 2000:
+if salario <= 2000:
     aumento = salario * 0.10
     salario = salario + aumento
     print('O Valor do aumento foi de: {}'.format(aumento))
