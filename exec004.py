@@ -23,8 +23,11 @@ else:
 
 salario = float(input('Informe o Seu Salário: '))
 if salario < 2000:
-    salario = salario + (salario * 0.10)
+    aumento = salario * 0.10
+    salario = salario + aumento
+    print('O Valor do aumento foi de: {}'.format(aumento))
     print('O Seu novo Salário com 10% de Aumento será: {}'.format(salario))
 else:
     salario = salario + (salario * 0.05)
+    print('O Valor do aumento foi de: {}'.format(aumento))
     print('O Seu novo Salário com 5% de Aumento será: {}'.format(salario))
