@@ -10,11 +10,14 @@ if numero1 % 2 == 0:
     print('O Número Digitado é Par!')
 else:
     print('O Número Digitado é Ímpar!')
+
 numero2 = float(input('Digite Outro Número: '))
 maior = numero1
 if numero2 > numero1:
     maior = numero2
     print('O Maior Número entre os Digitados é {}'.format(numero2))
+elif numero1 == numero2:
+    print('Os Número São Iguais!')
 else:
     print('O Maior Número entre os Digitados é {}'.format(numero1))
 
