@@ -9,3 +9,9 @@ print(tarefas)
 #eu consigo inserir um item em uma determinada posição
 tarefas.insert(1,'planejar')
 print(tarefas)
+#remover o ultimo ite da lista
+ultima = tarefas.pop()
+print(tarefas)
+#remover um objeto especifico
+tarefas.romve('revisar')
+print(tarefas)
