@@ -1,0 +1,55 @@
+total_vendido_equipe = 0
+qtd_vendas_equipe = 0
+total_pago_comissoes = 0
+maior_vendedor = ''
+menor_vendedor = ''
+maior_venda = 0
+menor_venda = 99999999
+qtd_vendedores = int(input('Informe a Quantidade de Vendedores: '))
+
+for c in range (0, qtd_vendedores):
+    nome = input('\nInforme o Nome do Vendedor: ')
+    salario_base = float(input('Informe o Salário Base do Vendedor: '))
+    valor_total_vendido = float(input('Informe o Valor Total do Vendido: '))
+    qtd_vendas = int(input('Informe a Quantidade de Vendas: '))
+    total_vendido_equipe = total_vendido_equipe + valor_total_vendido
+    qtd_vendas_equipe = qtd_vendas_equipe + qtd_vendas
+
+    if valor_total_vendido <= 10000:
+        comissao = salario_base * 0.03
+        salario = salario_base + comissao
+        total_pago_comissoes = total_pago_comissoes + comissao
+        print('\nComissão de 3% Sobre o Salário Base: R${:.2f}'.format(comissao))
+    elif valor_total_vendido > 10000 and valor_total_vendido <= 30000:
+        comissao = salario_base * 0.05
+        salario = salario_base + comissao
+        total_pago_comissoes = total_pago_comissoes + comissao
+        print('\nComissão de 5% Sobre o Salário Base: R${:.2f}'.format(comissao))
+    else:
+        comissao = salario_base * 0.08
+        salario = salario_base + comissao
+        total_pago_comissoes = total_pago_comissoes + comissao
+        print('\nComissão de 8% Sobre o Salário Base: R${:.2f}'.format(comissao))
+
+    if qtd_vendas > 20:
+        bonus = 500
+        salario = salario_base + comissao + bonus
+        print('\nBônus de R$500! - Devido a Quantidade de Vendas Realizadas.')
+
+    media_por_venda = valor_total_vendido / qtd_vendas
+    if valor_total_vendido > maior_venda:
+        maior_venda = valor_total_vendido
+        maior_vendedor = nome
+    if valor_total_vendido < menor_venda:
+        menor_venda = valor_total_vendido
+        menor_vendedor = nome
+
+    print('\nRemuneração Final: {:.2f}'.format(salario))
+    print('Média de Valor por Vendas: {:.2f}'.format(media_por_venda))
+
+print('\nTotal Vendido pela Equipe: {:.2f}'.format(total_vendido_equipe))
+print('Total Pago em Comissões: {:.2f}'.format(total_pago_comissoes))
+print('Maior Vendedor: {}'.format(maior_vendedor))
+print('Menor Vendedor: {}'.format(menor_vendedor))
+media_equipe = total_vendido_equipe / qtd_vendas_equipe
+print('Média de Vendas da Equipe: {:.2f}'.format(media_equipe))
