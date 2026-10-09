@@ -13,3 +13,14 @@ pedidos = [
 """
 Use listas de dicionarios e use um dicionario para contar status
 """
+
+faturamento = 0
+contagem = {}
+maior_pago = None
+for pedido in pedidos:
+    status = pedido['status']
+    contagem[status] = contagem.get(status, 0) + 1
+    if status == 'pago':
+        faturamento += pedido['total']
+    if maior_pago is None or pedido['total'] > maior_pago['total']:
+        maior_pago = pedido
