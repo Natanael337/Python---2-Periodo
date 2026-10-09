@@ -10,4 +10,7 @@ usuario = {'nome':'Natan', 'ativo': False}
 usuario['ativo'] = True
 usuario['perfil'] = 'admin'
 usuario.update({'cidade': 'Aracaju', 'idade': 19})
+inprimir_usuario(usuario)
 usuario['palavras'] = ['python', 'SQL', 'python', 'AWS', 'python', 'SQL']
+frequencia = extrair_frequencia_palavras(usuario.get('palavras'))
+print(frequencia)
