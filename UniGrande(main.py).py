@@ -10,6 +10,27 @@ class Aluno:
     def apresentar(self):
         return f'{self.matricula} - {self.nome}'
 
+    @property
+    def nome(self) -> str:
+        return self._nome
+
+    @nome.setter
+    def nome(self, valor) -> None:
+        valor = valor.strip()
+        if len(valor) < 3:
+            raise ValueError('Nome Inválido')
+        self._nome = valor
+
+    @property
+    def mgp(self) -> float:
+        return self._mgp
+
+    @mgp.setter
+    def mgp(self, valor: float) -> None:
+        if not 0 <= valor <= 10:
+            raise ValueError('MGP deve estar entre 0 e 10')
+        self._mgp = valor
+
 class Professor:
 
     def __init__(self, matricula:int, nome:str, email:str):
@@ -41,3 +62,4 @@ print(professor_2.apresentar_professor())
 
 curso_1 = Curso(4340, 'Enfermagem', '40')
 curso_2 = Curso(2530, 'Análise e Desenvolvimento de Sistemas', '40')
+
