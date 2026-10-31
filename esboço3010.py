@@ -45,11 +45,12 @@ class Professor:
 
     @email.setter
     def email(self, valor) -> None:
+        valor = valor.strip().lower()
         if '@' not in valor:
-            raise ValueError('Email sem @!')
-        if '.' not in valor:
-            raise ValueError('Email sem Domínio!')
-
+            raise ValueError('Email Inválido')
+        usuario, dominio = valor.split('@', 1)
+        if not usuario or not in dominio:
+            
     def payload_integracao_rh(self) -> dict[str, object]:
         return {'id_rh': self.__id_rh, 'matricula': self.matricula, 'nome': self.nome}
 
